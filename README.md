@@ -2,6 +2,61 @@
 
 A Python application to backup and export your Spotify playlists with full metadata preservation. Perfect for creating backups before migrating to other music services like Apple Music.
 
+## 📋 TODO List for Next Session
+
+### High Priority - Interface Improvements
+- [ ] **Implement pagination for playlist interface** - Support for 700+ playlists
+  - Add pagination controls (next/previous page, jump to page)
+  - Configurable page size (default: 25-50 playlists per page)
+  - Search/filter by playlist name before retrieval
+- [ ] **Add initial filters before retrieving playlists**
+  - Filter by playlist type (owned/followed/collaborative) before API call
+  - Filter by date range (created/modified within X months)
+  - Filter by playlist size (minimum/maximum track count)
+  - Filter by public/private status
+  - Option to exclude empty playlists
+- [ ] **Browse exported data functionality**
+  - Add viewer/browser for JSON exports
+  - Search and filter through exported playlists
+  - Compare multiple exports
+  - Mark playlists for import to other services
+
+### Apple Music Integration Preparation
+- [ ] **Research Apple Music API** - Analyze authentication, data models, and migration compatibility
+- [ ] **Simplify exporter data model**
+  - Create common/universal data structure for cross-service compatibility
+  - Move service-specific attributes to sub-objects (e.g., `spotify_specific`, `apple_music_specific`)
+  - Focus on ISRC codes and basic metadata for matching
+- [ ] **Design migration workflow**
+  - Create mapping between services for track/playlist matching
+  - Handle tracks not available on target service
+  - Preserve playlist order and metadata
+
+### Technical Improvements
+- [ ] **Improve test coverage**
+  - Fix mock service tests (API method alignment)
+  - Add integration tests for interface pagination  
+  - Add tests for export data browsing
+  - Test service abstraction with multiple services
+- [ ] **Strengthen type annotations**
+  - Add more specific typing for API responses
+  - Use Protocol/TypedDict for better API contracts
+  - Add runtime type validation for critical paths
+- [ ] **Optional SQLite database support**
+  - Cache playlist metadata locally for faster browsing
+  - Store export history and comparison data
+  - Enable offline playlist analysis
+
+### User Experience Enhancements
+- [ ] **Better CLI experience**
+  - Add command-line arguments for batch operations
+  - Progress bars for large playlist processing
+  - Colorized output and better formatting
+- [ ] **Export comparison tools**
+  - Diff between different exports over time
+  - Track playlist changes and additions
+  - Generate migration recommendations
+
 ## ✨ Features
 
 - **Complete Metadata Backup**: Preserve all playlist and track information including ISRC codes, URIs, popularity scores, and relationships
