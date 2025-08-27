@@ -122,7 +122,14 @@ class PlaylistSelector:
                 print("Selection cleared")
             elif choice == "8":
                 if selected_playlists:
-                    return list(set(selected_playlists))  # Remove duplicates
+                    # Remove duplicates by ID
+                    seen_ids = set()
+                    unique_playlists = []
+                    for playlist in selected_playlists:
+                        if playlist.id not in seen_ids:
+                            seen_ids.add(playlist.id)
+                            unique_playlists.append(playlist)
+                    return unique_playlists
                 else:
                     print("No playlists selected.")
             else:
