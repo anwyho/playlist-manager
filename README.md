@@ -33,19 +33,27 @@ A Python application to backup and export your Spotify playlists with full metad
   - Preserve playlist order and metadata
 
 ### Technical Improvements
+- [ ] **Implement smart caching system**
+  - Cache playlist metadata locally (SQLite/JSON) with timestamps
+  - Skip API calls for playlists fetched within last hour
+  - Add `--force-refresh` CLI flag to bypass cache
+  - Add `--max-cache-age` option (default: 1 hour)
+  - Cache invalidation for modified playlists (track snapshot_id changes)
+  - Show cache status in interface ("cached 45min ago" vs "fetching...")
 - [ ] **Improve test coverage**
   - Fix mock service tests (API method alignment)
   - Add integration tests for interface pagination  
-  - Add tests for export data browsing
+  - Add tests for export data browsing and caching
   - Test service abstraction with multiple services
 - [ ] **Strengthen type annotations**
   - Add more specific typing for API responses
   - Use Protocol/TypedDict for better API contracts
   - Add runtime type validation for critical paths
-- [ ] **Optional SQLite database support**
+- [ ] **Enhanced SQLite database support**
   - Cache playlist metadata locally for faster browsing
   - Store export history and comparison data
   - Enable offline playlist analysis
+  - Track cache timestamps and invalidation rules
 
 ### User Experience Enhancements
 - [ ] **Better CLI experience**
