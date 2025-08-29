@@ -1,3 +1,14 @@
+> [!IMPORTANT]
+> Turns out Apple Music released [something](https://www.trustedreviews.com/how-to/transfer-spotify-to-apple-music) the day I created this repo.
+> * Open Settings
+> * Scroll to Apps
+> * Tap Music
+> * Select Transfer Music from Other Music Services
+> * Choose Spotify from the list
+> * Sign into Spotify
+> * Select the playlists you want to transfer
+> * Tap Add to Library
+
 # 🎵 Spotify Playlist Keeper
 
 A Python application to backup and export your Spotify playlists with full metadata preservation. Perfect for creating backups before migrating to other music services like Apple Music.
